@@ -146,5 +146,52 @@
     <p><strong>Finals:</strong> <span id="displayFinals"></span></p>
     <p><strong>Average:</strong> <span id="displayAverage"></span></p>
 </div>
+<script>
+    function showGradeForm(event) {
+        event.preventDefault();
+
+        const firstName = document.getElementById('first_name').value;
+        const lastName = document.getElementById('last_name').value;
+        const age = document.getElementById('age').value;
+        const gender = document.querySelector('input[name="gender"]:checked').value;
+        const course = document.getElementById('course').value;
+        const email = document.getElementById('email').value;
+
+        window.studentDetails = { firstName, lastName, age, gender, course, email };
+
+        document.getElementById('enrollmentForm').style.display = 'none';
+        document.getElementById('gradeForm').style.display = 'block';
+    }
+
+    function submitGrades(event) {
+        event.preventDefault();
+
+        const prelim = parseFloat(document.getElementById('prelim').value);
+        const midterm = parseFloat(document.getElementById('midterm').value);
+        const finals = parseFloat(document.getElementById('finals').value);
+        const average = ((prelim + midterm + finals) / 3).toFixed(2);
+
+        const status = average >= 75 ? 'Passed' : 'Failed';
+
+        // Display student information and grades
+        document.getElementById('displayFirstName').textContent = window.studentDetails.firstName;
+        document.getElementById('displayLastName').textContent = window.studentDetails.lastName;
+        document.getElementById('displayAge').textContent = window.studentDetails.age;
+        document.getElementById('displayGender').textContent = window.studentDetails.gender;
+        document.getElementById('displayCourse').textContent = window.studentDetails.course;
+        document.getElementById('displayEmail').textContent = window.studentDetails.email;
+        document.getElementById('displayPrelim').textContent = prelim;
+        document.getElementById('displayMidterm').textContent = midterm;
+        document.getElementById('displayFinals').textContent = finals;
+        document.getElementById('displayAverage').textContent = `${average} (${status})`;
+
+        // Show student summary and reset forms
+        document.getElementById('gradeForm').style.display = 'none';
+        document.getElementById('enrollmentForm').style.display = 'block';
+        document.getElementById('studentSummary').classList.remove('hidden');
+        document.getElementById('enroll').reset();
+    }
+</script>
+
 </body>
 </html>
