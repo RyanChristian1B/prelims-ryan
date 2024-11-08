@@ -55,6 +55,20 @@
         <input type="submit" value="Submit Grades">
     </form>
 </div>
-
+<!-- Display Student Details Summary -->
+<div id="studentSummary" class="student-summary hidden">
+    <h2>Student Details Summary</h2>
+    <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+    <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+    <p><strong>Age:</strong> <span id="displayAge"></span></p>
+    <p><strong>Gender:</strong> <span id="displayGender"></span></p>
+    <p><strong>Course:</strong> <span id="displayCourse"></span></p>
+    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+    <h3>Grades</h3>
+    <p><strong>Prelim:</strong> <span id="displayPrelim"></span></p>
+    <p><strong>Midterm:</strong> <span id="displayMidterm"></span></p>
+    <p><strong>Finals:</strong> <span id="displayFinals"></span></p>
+    <p><strong>Average:</strong> <span id="displayAverage"></span></p>
+</div>
 </body>
 </html>
