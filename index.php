@@ -39,5 +39,22 @@
         <input type="submit" value="Submit Student Information">
     </form>
 </div>
+<!-- Grade Entry Form -->
+<div id="gradeForm" class="hidden">
+    <form onsubmit="submitGrades(event)">
+        <h2>Enter Grades</h2>
+        <label for="prelim">Prelim Grade:</label>
+        <input type="number" id="prelim" name="prelim" min="0" max="100" required>
+
+        <label for="midterm">Midterm Grade:</label>
+        <input type="number" id="midterm" name="midterm" min="0" max="100" required>
+
+        <label for="finals">Final Grade:</label>
+        <input type="number" id="finals" name="finals" min="0" max="100" required>
+
+        <input type="submit" value="Submit Grades">
+    </form>
+</div>
+
 </body>
 </html>
